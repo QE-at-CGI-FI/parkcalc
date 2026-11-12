@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+:root {
+	--pink-50: #fff5f9;
+	--pink-100: #ffe4ef;
+	--pink-200: #ffc9de;
+	--pink-300: #ff9fc3;
+	--pink-500: #ec4f8f;
+	--pink-600: #d63377;
+	--pink-800: #8c1d4d;
+	--ink: #4a2338;
+	--card: #ffffff;
+	--shadow: 0 8px 24px rgba(214, 51, 119, 0.12);
+	--radius: 16px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	background:
+		radial-gradient(circle at 10% 0%, var(--pink-200) 0, transparent 40%),
+		radial-gradient(circle at 100% 30%, var(--pink-100) 0, transparent 45%),
+		var(--pink-50);
+	background-attachment: fixed;
+	min-height: 100%;
+}
+
+body {
+	max-width: 720px;
+	margin: 0 auto !important;
+	padding: 32px 16px 48px;
+	background: transparent !important;
+	color: var(--ink);
+	font-family: 'Nunito', Arial, Helvetica, sans-serif;
+	min-height: 100vh;
+}
+
+.PageTitle {
+	font-family: 'Nunito', Arial, Helvetica, sans-serif;
+	font-size: 28px;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	color: var(--pink-600);
+	margin: 0 0 24px;
+	text-align: center;
+}
+
+.PageTitle::before {
+	content: '\2665  ';
+	color: var(--pink-300);
+}
+
+.PageTitle::after {
+	content: ' \2665';
+	color: var(--pink-300);
+}
+
+.BodyCopy {
+	font-family: 'Nunito', Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: var(--ink);
+	text-decoration: none;
+}
+
+.SubHead {
+	font-family: 'Nunito', Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: 800;
+	color: var(--pink-800);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* Calculator card */
+
+form[name="Calculator"] {
+	background: var(--card);
+	border: 2px solid var(--pink-200);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	padding: 20px;
+	margin-bottom: 32px;
+}
+
+form[name="Calculator"] table {
+	width: 100%;
+	border: none;
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+form[name="Calculator"] td {
+	border: none;
+	border-bottom: 1px dashed var(--pink-200);
+	padding: 14px 8px;
+	vertical-align: middle;
+}
+
+form[name="Calculator"] td:first-child {
+	font-weight: 600;
+	color: var(--pink-800);
+	width: 38%;
+}
+
+form[name="Calculator"] tr:last-child td {
+	border-bottom: none;
+	background: var(--pink-100);
+}
+
+form[name="Calculator"] tr:last-child td:first-child {
+	border-radius: 12px 0 0 12px;
+}
+
+form[name="Calculator"] tr:last-child td:last-child {
+	border-radius: 0 12px 12px 0;
+	font-size: 22px;
+	color: var(--pink-600);
+}
+
+form[name="Calculator"] tr:last-child td:last-child .SubHead,
+form[name="Calculator"] tr:last-child td:last-child.SubHead {
+	font-size: 22px;
+	color: var(--pink-600);
+}
+
+form[name="Calculator"] tr:last-child td:last-child .BodyCopy {
+	font-size: 14px;
+	color: var(--pink-800);
+}
+
+form[name="Calculator"] tr:last-child td:last-child .BodyCopy b {
+	font-weight: 600;
+}
+
+/* Inputs */
+
+input[type="text"],
+select {
+	font: inherit;
+	font-size: 15px;
+	color: var(--ink);
+	background: var(--pink-50);
+	border: 2px solid var(--pink-200);
+	border-radius: 10px;
+	padding: 8px 12px;
+	outline: none;
+	transition: border-color 0.15s, box-shadow 0.15s;
+	max-width: 100%;
+}
+
+#StartingDate,
+#LeavingDate {
+	width: 8.5em;
+}
+
+#StartingTime,
+#LeavingTime {
+	width: 5em;
+}
+
+select {
+	cursor: pointer;
+}
+
+input[type="text"]:focus,
+select:focus {
+	border-color: var(--pink-500);
+	box-shadow: 0 0 0 4px var(--pink-100);
+}
+
+input[type="radio"] {
+	accent-color: var(--pink-500);
+	margin: 0 4px 0 10px;
+	vertical-align: middle;
+}
+
+form[name="Calculator"] td a img {
+	vertical-align: middle;
+	padding: 6px;
+	margin: 0 2px;
+	background: var(--pink-100);
+	border-radius: 8px;
+	box-sizing: content-box;
+	transition: background 0.15s;
+}
+
+form[name="Calculator"] td a:hover img {
+	background: var(--pink-200);
+}
+
+input[type="submit"] {
+	display: block;
+	width: 100%;
+	margin-top: 20px;
+	padding: 14px;
+	font: inherit;
+	font-size: 17px;
+	font-weight: 800;
+	letter-spacing: 0.05em;
+	color: #fff;
+	background: linear-gradient(135deg, var(--pink-300), var(--pink-500));
+	border: none;
+	border-radius: 999px;
+	box-shadow: 0 6px 16px rgba(236, 79, 143, 0.35);
+	cursor: pointer;
+	transition: transform 0.1s, box-shadow 0.15s;
+}
+
+input[type="submit"]:hover {
+	box-shadow: 0 8px 22px rgba(236, 79, 143, 0.5);
+	transform: translateY(-1px);
+}
+
+input[type="submit"]:active {
+	transform: translateY(1px);
+}
+
+input[type="submit"]:focus-visible {
+	outline: 3px solid var(--pink-800);
+	outline-offset: 3px;
+}
+
+/* Rates */
+
+body > p.BodyCopy {
+	line-height: 1.6;
+}
+
+body > p.BodyCopy:has(strong) {
+	background: var(--card);
+	border-left: 6px solid var(--pink-300);
+	border-radius: 12px;
+	box-shadow: var(--shadow);
+	padding: 14px 18px;
+	margin: 0 0 14px;
+}
+
+body > p.BodyCopy strong {
+	color: var(--pink-600);
+	font-size: 16px;
+}
+
+body > p.BodyCopy em {
+	color: var(--pink-500);
+}
+
+body > p.BodyCopy > .SubHead {
+	display: block;
+	font-size: 18px;
+	color: var(--pink-600);
+	margin-bottom: 4px;
+}
+
+body > p.BodyCopy:last-of-type {
+	background: var(--pink-100);
+	border: 1px dashed var(--pink-300);
+	border-radius: 12px;
+	padding: 12px 16px;
+	color: var(--pink-800);
+	font-size: 13px;
+}
+
+::selection {
+	background: var(--pink-200);
+}
+
+/* Narrow screens: stack label above field */
+
+@media (max-width: 560px) {
+	.PageTitle {
+		font-size: 22px;
+	}
+
+	form[name="Calculator"] {
+		padding: 12px;
+	}
+
+	form[name="Calculator"] table,
+	form[name="Calculator"] tbody,
+	form[name="Calculator"] tr,
+	form[name="Calculator"] td {
+		display: block;
+		width: 100% !important;
+	}
+
+	form[name="Calculator"] td:first-child {
+		border-bottom: none;
+		padding-bottom: 4px;
+	}
+
+	form[name="Calculator"] tr:last-child td:first-child {
+		border-radius: 12px 12px 0 0;
+	}
+
+	form[name="Calculator"] tr:last-child td:last-child {
+		border-radius: 0 0 12px 12px;
+	}
+
+	#StartingDate,
+	#LeavingDate {
+		width: 7.6em;
+	}
+
+	#StartingTime,
+	#LeavingTime {
+		width: 4.2em;
+	}
+
+	input[type="text"] {
+		padding: 8px;
+		font-size: 14px;
+	}
+
+	input[type="radio"] {
+		margin-left: 6px;
+	}
+
+}

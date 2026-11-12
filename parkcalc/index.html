@@ -1,0 +1,72 @@
+
+
+<html>
+    <head>
+        <title>Parking Cost Calculator</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script language="JavaScript" type="text/JavaScript" src="datetimepicker.js"></script>
+        <script language="JavaScript" type="text/JavaScript" src="parkcalc.js"></script>
+    </head>
+    <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+        <p align="left" class="PageTitle">PARKING COST CALCULATOR</p>
+        <form name="Calculator" method="get" action="index.html">
+            <table border="1" cellpadding="3" cellspacing="0" bordercolor="#CCCCCC">
+                <tr>
+                    <td class="BodyCopy">Choose a Parking Lot </td>
+                    <td class="BodyCopy"><select name="ParkingLot" size="1" id="ParkingLot">
+                        <option value="Valet" selected>Valet Parking</option>
+                        <option value="Short" >Short-Term Parking</option>
+                        <option value="Economy" >Economy Parking</option>
+                        <option value="Long-Garage" >Long-Term Garage Parking</option>
+                        <option value="Long-Surface" >Long-Term Surface Parking</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td class="BodyCopy">Please input entry date and time </td>
+                    <td class="BodyCopy">
+                        <input name="StartingDate" type="text" id="StartingDate" value="MM/DD/YYYY" size="15">
+                        <a href="javascript:NewCal('StartingDate','mmddyyyy',false,24)"><img src="cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>
+                        <input name="StartingTime" type="text" id="StartingTime" value="12:00" size="10">
+                        <input name="StartingTimeAMPM" type="radio" value="AM" checked>AM
+                        <input name="StartingTimeAMPM" type="radio" value="PM" >PM
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BodyCopy">Please input leaving date and time </td>
+                    <td class="BodyCopy">
+                        <input name="LeavingDate" type="text" id="LeavingDate" value="MM/DD/YYYY" size="15">
+                        <a href="javascript:NewCal('LeavingDate','mmddyyyy',false,24)"><img src="cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>
+                        <input name="LeavingTime" type="text" id="LeavingTime" value="12:00" size="10">
+                        <input name="LeavingTimeAMPM" type="radio" value="AM" checked>AM
+                        <input name="LeavingTimeAMPM" type="radio" value="PM" >PM
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BodyCopy"><div class="SubHead">estimated Parking costs</div></td>
+                    <td class='SubHead'><b>$ 0</b></td>                </tr>
+            </table>
+            <input name="action" type="hidden" value="calculate">                       
+            <input type="submit" name="Submit" value="Calculate">
+        </form>
+	<p class="BodyCopy"><span class="SubHead">Parking Rates</span>
+	<p class="BodyCopy"><strong><a name="Valet"></a>Valet Parking</strong><br>
+	$18 per day<br>
+	$12 for five hours or less</p>
+	<p class="BodyCopy"><strong><a name="Short"></a>Short-Term (hourly) Parking</strong><br>
+        $2.00 first hour; $1.00 each additional 1/2 hour<br>
+	$24.00 daily maximum					        </p>
+	<p class="BodyCopy"><strong><a name="GarageLong"></a>Long-Term Garage Parking</strong><br>
+	$2.00 per hour<br>
+        $12.00 daily maximum<br>
+	$72.00 per week (7th day free)</p>
+        <p class="BodyCopy"><strong><a name="North"></a>Long-Term Surface Parking<em> (North Lot)</em></strong><br>
+	$2.00 per hour<br>
+	$10.00 daily maximum<br>
+	$60.00 per week (7th day free)</p>
+        <p class="BodyCopy"><strong><a name="Economy"></a>Economy Lot Parking</strong><br>
+	$2.00 per hour<br>
+	$9.00 daily maximum<br>
+	$54.00 per week (7th day free)<br>
+	<p class="BodyCopy"><i>A Lost Ticket Fee of $10.00 will be assessed when the original parking stub cannot be produced when exiting the parking facilities (does not apply to Valet Parking).</i></p>
+    </body>
+</html>

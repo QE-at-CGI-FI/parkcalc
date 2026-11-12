@@ -1,0 +1,9 @@
+ - Short-Term: 0 minutes costs $2. On later days, the leftover time can cost $1 or even $0 (1 day 1 minute is $25).
+  - Valet: 5 hours or less is $12. Anything longer is $18 for every started day, so 25 hours is $36.
+  - Long-term lots: every lot has two bugs:
+    - Below 7 full hours, a started hour adds $2 on top of the daily maximum. So 5h01m at Economy costs $11, above the $9 daily cap.
+    - Once you reach day 6 of a week, extra hours are free (6d 11h is $54).
+  - Invalid dates or times give a blank page. Examples are abc, 2026-11-13, 11/13/26, the default MM/DD/YYYY, or any year before 1970.
+  - Out-of-range values roll over. 13/40/2026 becomes Feb 9 2027 and 10:75 becomes 11:15. 13:00 PM becomes 1 AM the next day.
+  - An unknown lot costs $0.00. Leaving before you arrived shows the server's ERROR message.
+  - After calculating, the page resets the lot to Valet. It also rewrites times in 24-hour form (e.g. 22:5) with AM selected
